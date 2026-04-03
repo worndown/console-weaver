@@ -1,0 +1,7 @@
+<Solution>
+  <Folder Name="/Examples/">
+    <Project Path="src/FileSync/FileSync.csproj" Id="401b6e9b-abb3-4bc9-be74-8c629a56f516" />
+  </Folder>
+  <Project Path="src/ConsoleWeaver/ConsoleWeaver.csproj" Id="fae83124-f706-45a2-8a26-4dbbf32b4d59" />
+  <Project Path="tests/UnitTests/UnitTests.csproj" Id="6854706e-0854-401c-8f1e-7d537e2075ce" />
+</Solution>

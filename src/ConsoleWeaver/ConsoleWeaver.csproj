@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+
+    <!-- NuGet Package Configuration -->
+    <PackageId>ConsoleWeaver</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>worndown</Authors>
+    <Description>A .NET utility library for building console applications with command-line argument parsing, progress bars, formatted tables, interactive prompts, and testable console abstractions.</Description>
+    <PackageTags>console;cli;command-line;argument-parser;progress-bar;table;prompt;terminal</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/worndown/console-weaver</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/worndown/console-weaver.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+
+    <!-- Build Configuration -->
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+</Project>
