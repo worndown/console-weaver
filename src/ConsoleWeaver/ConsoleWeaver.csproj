@@ -8,7 +8,7 @@
 
     <!-- NuGet Package Configuration -->
     <PackageId>ConsoleWeaver</PackageId>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <Authors>worndown</Authors>
     <Description>A .NET utility library for building console applications with command-line argument parsing, progress bars, formatted tables, interactive prompts, and testable console abstractions.</Description>
     <PackageTags>console;cli;command-line;argument-parser;progress-bar;table;prompt;terminal</PackageTags>
