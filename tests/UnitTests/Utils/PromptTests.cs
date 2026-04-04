@@ -58,11 +58,13 @@ namespace UnitTests.Utils
         [TestMethod]
         public void Response_Enum_Values_Match_ResponseOptions()
         {
+#pragma warning disable MSTEST0032
             Assert.AreEqual((int)ResponseOptions.Yes, (int)Response.Yes);
             Assert.AreEqual((int)ResponseOptions.YesToAll, (int)Response.YesToAll);
             Assert.AreEqual((int)ResponseOptions.No, (int)Response.No);
             Assert.AreEqual((int)ResponseOptions.NoToAll, (int)Response.NoToAll);
             Assert.AreEqual((int)ResponseOptions.Cancel, (int)Response.Cancel);
+#pragma warning restore MSTEST0032
         }
 
         #endregion
@@ -90,9 +92,9 @@ namespace UnitTests.Utils
 
             prompt.GetChoiceCore("Select:", choices);
 
-            Assert.IsTrue(this.mockConsole.Output.Contains("First"));
-            Assert.IsTrue(this.mockConsole.Output.Contains("Second"));
-            Assert.IsTrue(this.mockConsole.Output.Contains("Third"));
+            Assert.Contains("First", this.mockConsole.Output);
+            Assert.Contains("Second", this.mockConsole.Output);
+            Assert.Contains("Third", this.mockConsole.Output);
         }
 
         [TestMethod]
@@ -104,7 +106,7 @@ namespace UnitTests.Utils
 
             prompt.GetChoiceCore("Please choose:", choices);
 
-            Assert.IsTrue(this.mockConsole.Output.Contains("Please choose:"));
+            Assert.Contains("Please choose:", this.mockConsole.Output);
         }
 
         [TestMethod]
@@ -316,7 +318,7 @@ namespace UnitTests.Utils
 
             prompt.GetResponseCore("Do you want to continue?", Response.Yes, ResponseOptions.YesNo);
 
-            Assert.IsTrue(this.mockConsole.Output.Contains("Do you want to continue?"));
+            Assert.Contains("Do you want to continue?", this.mockConsole.Output);
         }
 
         #endregion
@@ -375,8 +377,8 @@ namespace UnitTests.Utils
 
             prompt.GetStringCore("Enter name", "John");
 
-            Assert.IsTrue(this.mockConsole.Output.Contains("Enter name"));
-            Assert.IsTrue(this.mockConsole.Output.Contains("John"));
+            Assert.Contains("Enter name", this.mockConsole.Output);
+            Assert.Contains("John", this.mockConsole.Output);
         }
 
         [TestMethod]
@@ -448,7 +450,7 @@ namespace UnitTests.Utils
 
             prompt.GetIntegerCore("Enter number");
 
-            Assert.IsTrue(this.mockConsole.Output.Contains("Invalid integer"));
+            Assert.Contains("Invalid integer", this.mockConsole.Output);
         }
 
         [TestMethod]
@@ -459,7 +461,7 @@ namespace UnitTests.Utils
 
             prompt.GetIntegerCore("Enter number", 5);
 
-            Assert.IsTrue(this.mockConsole.Output.Contains("5"));
+            Assert.Contains("5", this.mockConsole.Output);
         }
 
         [TestMethod]
@@ -516,7 +518,7 @@ namespace UnitTests.Utils
             prompt.GetPasswordCore("Password");
 
             // Should have written 3 asterisks
-            Assert.IsTrue(this.mockConsole.Output.Contains("***"));
+            Assert.Contains("***", this.mockConsole.Output);
         }
 
         [TestMethod]
@@ -569,7 +571,7 @@ namespace UnitTests.Utils
 
             prompt.GetPasswordCore("Enter your password");
 
-            Assert.IsTrue(this.mockConsole.Output.Contains("Enter your password"));
+            Assert.Contains("Enter your password", this.mockConsole.Output);
         }
 
         [TestMethod]

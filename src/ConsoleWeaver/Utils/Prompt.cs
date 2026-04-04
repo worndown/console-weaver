@@ -13,13 +13,28 @@ namespace ConsoleWeaver.Utils
     [Flags]
     public enum ResponseOptions
     {
+        /// <summary>Yes.</summary>
         Yes = 1,
+
+        /// <summary>Yes to all.</summary>
         YesToAll = 2,
+
+        /// <summary>No.</summary>
         No = 4,
+
+        /// <summary>No to all.</summary>
         NoToAll = 8,
+
+        /// <summary>Cancel.</summary>
         Cancel = 16,
+
+        /// <summary>Yes or No.</summary>
         YesNo = Yes | No,
+
+        /// <summary>Yes, No, or Cancel.</summary>
         YesNoCancel = YesNo | Cancel,
+
+        /// <summary>All options.</summary>
         All = YesNoCancel | YesToAll | NoToAll
     }
 
@@ -28,10 +43,19 @@ namespace ConsoleWeaver.Utils
     /// </summary>
     public enum Response
     {
+        /// <summary>Yes.</summary>
         Yes = ResponseOptions.Yes,
+
+        /// <summary>Yes to all.</summary>
         YesToAll = ResponseOptions.YesToAll,
+
+        /// <summary>No.</summary>
         No = ResponseOptions.No,
+
+        /// <summary>No to all.</summary>
         NoToAll = ResponseOptions.NoToAll,
+
+        /// <summary>Cancel.</summary>
         Cancel = ResponseOptions.Cancel,
     }
 

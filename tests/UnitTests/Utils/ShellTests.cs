@@ -59,7 +59,7 @@ namespace UnitTests.Utils
             Assert.AreEqual(ConsoleColor.Gray, this.mockConsole.ForegroundColor);
 
             // Verify the text was written with the correct color
-            Assert.AreEqual(1, this.mockConsole.WriteOperations.Count);
+            Assert.HasCount(1, this.mockConsole.WriteOperations);
             Assert.AreEqual(ConsoleColor.Red, this.mockConsole.WriteOperations[0].Foreground);
         }
 
@@ -74,7 +74,7 @@ namespace UnitTests.Utils
             Assert.AreEqual(ConsoleColor.Black, this.mockConsole.BackgroundColor);
 
             // Verify the text was written with the correct background color
-            Assert.AreEqual(1, this.mockConsole.WriteOperations.Count);
+            Assert.HasCount(1, this.mockConsole.WriteOperations);
             Assert.AreEqual(ConsoleColor.Blue, this.mockConsole.WriteOperations[0].Background);
         }
 
@@ -90,7 +90,7 @@ namespace UnitTests.Utils
             Assert.AreEqual(ConsoleColor.Black, this.mockConsole.BackgroundColor);
 
             // Verify the text was written with correct colors
-            Assert.AreEqual(1, this.mockConsole.WriteOperations.Count);
+            Assert.HasCount(1, this.mockConsole.WriteOperations);
             Assert.AreEqual(ConsoleColor.Yellow, this.mockConsole.WriteOperations[0].Foreground);
             Assert.AreEqual(ConsoleColor.DarkBlue, this.mockConsole.WriteOperations[0].Background);
         }
@@ -107,7 +107,7 @@ namespace UnitTests.Utils
             Assert.AreEqual(ConsoleColor.DarkGray, this.mockConsole.BackgroundColor);
 
             // Verify the text was written with original colors (no change)
-            Assert.AreEqual(1, this.mockConsole.WriteOperations.Count);
+            Assert.HasCount(1, this.mockConsole.WriteOperations);
             Assert.AreEqual(ConsoleColor.Cyan, this.mockConsole.WriteOperations[0].Foreground);
             Assert.AreEqual(ConsoleColor.DarkGray, this.mockConsole.WriteOperations[0].Background);
         }
@@ -144,7 +144,7 @@ namespace UnitTests.Utils
             Assert.AreEqual(ConsoleColor.Gray, this.mockConsole.ForegroundColor);
 
             // Verify the text was written with the correct color
-            Assert.AreEqual(1, this.mockConsole.WriteOperations.Count);
+            Assert.HasCount(1, this.mockConsole.WriteOperations);
             Assert.AreEqual(ConsoleColor.Green, this.mockConsole.WriteOperations[0].Foreground);
         }
 
@@ -159,7 +159,7 @@ namespace UnitTests.Utils
             Assert.AreEqual(ConsoleColor.Black, this.mockConsole.BackgroundColor);
 
             // Verify the text was written with the correct background color
-            Assert.AreEqual(1, this.mockConsole.WriteOperations.Count);
+            Assert.HasCount(1, this.mockConsole.WriteOperations);
             Assert.AreEqual(ConsoleColor.Magenta, this.mockConsole.WriteOperations[0].Background);
         }
 
@@ -176,7 +176,7 @@ namespace UnitTests.Utils
             Assert.AreEqual(ConsoleColor.Black, this.mockConsole.BackgroundColor);
 
             // Verify the text was written with correct colors
-            Assert.AreEqual(1, this.mockConsole.WriteOperations.Count);
+            Assert.HasCount(1, this.mockConsole.WriteOperations);
             Assert.AreEqual(ConsoleColor.Red, this.mockConsole.WriteOperations[0].Foreground);
             Assert.AreEqual(ConsoleColor.Yellow, this.mockConsole.WriteOperations[0].Background);
         }
@@ -212,12 +212,12 @@ namespace UnitTests.Utils
 
             Shell.WriteLine("Test", ConsoleColor.Cyan, ConsoleColor.DarkRed);
 
-            Assert.IsTrue(this.mockConsole.Output.Contains("Test"));
+            Assert.Contains("Test", this.mockConsole.Output);
             Assert.AreEqual(ConsoleColor.Gray, this.mockConsole.ForegroundColor);
             Assert.AreEqual(ConsoleColor.Black, this.mockConsole.BackgroundColor);
 
             // Verify the text was written with correct colors
-            Assert.AreEqual(1, this.mockConsole.WriteOperations.Count);
+            Assert.HasCount(1, this.mockConsole.WriteOperations);
             Assert.AreEqual(ConsoleColor.Cyan, this.mockConsole.WriteOperations[0].Foreground);
             Assert.AreEqual(ConsoleColor.DarkRed, this.mockConsole.WriteOperations[0].Background);
         }
@@ -314,7 +314,7 @@ namespace UnitTests.Utils
             Assert.AreEqual("RedGreenBlue", this.mockConsole.Output);
 
             // Verify each write operation used the correct color
-            Assert.AreEqual(3, this.mockConsole.WriteOperations.Count);
+            Assert.HasCount(3, this.mockConsole.WriteOperations);
             Assert.AreEqual(ConsoleColor.Red, this.mockConsole.WriteOperations[0].Foreground);
             Assert.AreEqual(ConsoleColor.Green, this.mockConsole.WriteOperations[1].Foreground);
             Assert.AreEqual(ConsoleColor.Blue, this.mockConsole.WriteOperations[2].Foreground);
@@ -357,7 +357,7 @@ namespace UnitTests.Utils
                 index++;
             }
 
-            Assert.AreEqual(colors.Length, this.mockConsole.WriteOperations.Count);
+            Assert.HasCount(colors.Length, this.mockConsole.WriteOperations);
         }
 
         #endregion
